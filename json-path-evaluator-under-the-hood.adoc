@@ -1,0 +1,42 @@
+= Json Path Evaluator Under the Hood
+
+link:index.html[Home]
+
+:description: online evaluator that invokes https://github.com/json-path/JsonPath methods via an API.
+:author: Sumiya
+:nofooter:
+:sectlinks:
+:icons: font
+
+This page describes how I set up my Json Path Evaluator web page: https://sumiya.page/jpath.html
+
+'''
+
+=== Set Up a Backend API
+Source Code for API and How to Deploy the Backend: https://github.com/psumiya/json-path-api
+
+The API is a wrapper to surface methods of https://github.com/json-path/JsonPath[Jayway JsonPath]. Jayway JsonPath is a  Java port of Stefan Goessner JsonPath implementation.
+
+Thanks to maintainers of Jayway JsonPath. At the time of writing (Jan-15-2023), this is _the_ most popular Java Json Query Library on https://mvnrepository.com/open-source/json-query[Maven Central].
+
+=== Set Up an Online/Web User Interface
+Source code for the web app here: https://github.com/psumiya/json-path-web
+
+My UI skills are, at best, primitive. Thanks to the maintainers at https://picocss.com/[picocss] for their work.
+
+'''
+
+=== Eventual End to End Request Flow
+The HTML is served from my S3 bucket, fronted by CloudFront for cached assets (html, javascript, etc.).
+
+The API request flow from the linked html page is:
+
+User (submit) -> Browser (fetch) ->
+
+- Browser (OPTIONS/pre-flight) -> Route 53 (dns) -> API Gateway -> Custom Domain -> API mapping -> Endpoint (OPTIONS) -> Mock Response with CORS headers
+
+- Browser (POST) -> Route 53 (dns) -> API Gateway -> Custom Domain -> API mapping -> Endpoint (POST) -> Request Proxied to Lambda by API Gateway -> Processed Response Body and Headers
+
+'''
+
+include::footer.adoc[]
