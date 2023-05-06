@@ -1,5 +1,7 @@
 = When Not To Use Kubernetes
 
+August 21, 2022
+
 link:index.html[Home]
 
 :description: when not to use kubernetes

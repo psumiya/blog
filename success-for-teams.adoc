@@ -1,5 +1,7 @@
 = Thoughts on Setting up Software Engineering Teams for Success
 
+May 8, 2022
+
 link:index.html[Home]
 
 :description: A post with some suggestions on how to set engineering teams up for success.
