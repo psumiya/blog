@@ -1,0 +1,197 @@
+= Java Evolution
+
+link:../index.html[Home]
+
+:Description: Feature list for different Java versions
+:author: Sumiya
+:nofooter:
+:sectlinks:
+
+:fn-lts: footnote:[LTS: Long-Term Support. `LTS = Yes` means this version will be a long-term support release from most vendors.]
+:fn-jep: footnote:[JEP: JDK Enhancement Proposal. The process for collecting, reviewing, sorting, and recording the results of proposals for enhancements to the JDK and for related efforts, such as process and infrastructure improvements. https://openjdk.org/jeps/1]
+:fn-incubator: footnote:[Incubator: Incubator modules are a means of putting non-final APIs and non-final tools in the hands of developers, while the APIs/tools progress towards either finalization or removal in a future release. https://openjdk.org/jeps/11]
+:fn-preview: footnote:[Preview: A preview feature is a new feature of the Java language, Java Virtual Machine, or Java SE API that is fully specified, fully implemented, and yet impermanent. It is available in a JDK feature release to provoke developer feedback based on real world use; this may lead to it becoming permanent in a future Java SE Platform. https://openjdk.org/jeps/12]
+
+== Releases
+
+[cols="1,1,1"]
+|===
+|Version|Release Date|LTS{fn-lts}
+
+|JDK 21
+|2023-09-19
+|Yes
+
+|JDK 20
+|2023-03-21
+|No
+
+|JDK 19
+|2022-09-20
+|No
+
+|JDK 18
+|2022-03-22
+|No
+
+|JDK 17
+|2021-09-14
+|Yes
+
+|JDK 16
+|2021-03-16
+|No
+
+|JDK 15
+|2020-09-15
+|No
+
+|JDK 14
+|2020-03-17
+|No
+
+|JDK 13
+|2019-09-17
+|No
+
+|JDK 12
+|2019-03-19
+|No
+
+|JDK 11
+|2018-09-25
+|Yes
+
+|===
+
+== Features
+
+This table excludes Incubator{fn-incubator} and Preview{fn-preview} features. To view a comprehensive list of Generally Available (GA) as well as Preview features, click on the JDK version in the table below.
+
+[cols="1,5"]
+|===
+|Version|Features - with link to the feature's JEP{fn-jep}
+
+|https://openjdk.org/projects/jdk/21[JDK 21]
+a|
+* https://openjdk.org/jeps/431[JEP-431]:    Sequenced Collections
+* https://openjdk.org/jeps/439[JEP-439]:	Generational ZGC
+* https://openjdk.org/jeps/440[JEP-440]:	Record Patterns
+* https://openjdk.org/jeps/441[JEP-441]:	Pattern Matching for switch
+* https://openjdk.org/jeps/444[JEP-444]:	Virtual Threads
+* https://openjdk.org/jeps/449[JEP-449]:	Deprecate the Windows 32-bit x86 Port for Removal
+* https://openjdk.org/jeps/451[JEP-451]:	Prepare to Disallow the Dynamic Loading of Agents
+* https://openjdk.org/jeps/452[JEP-452]:	Key Encapsulation Mechanism API
+
+|https://openjdk.org/projects/jdk/20[JDK 20]
+|Contains Incubator and Preview Features. Does not have any GA features.
+
+|https://openjdk.org/projects/jdk/19[JDK 19]
+a|
+* https://openjdk.org/jeps/422[JEP-422]:	Linux/RISC-V Port
+
+|https://openjdk.org/projects/jdk/18[JDK 18]
+a|
+* https://openjdk.org/jeps/400[JEP-400]:	UTF-8 by Default
+* https://openjdk.org/jeps/408[JEP-408]:	Simple Web Server
+* https://openjdk.org/jeps/413[JEP-413]:	Code Snippets in Java API Documentation
+* https://openjdk.org/jeps/416[JEP-416]:	Reimplement Core Reflection with Method Handles
+* https://openjdk.org/jeps/418[JEP-418]:	Internet-Address Resolution SPI
+* https://openjdk.org/jeps/421[JEP-421]:	Deprecate Finalization for Removal
+
+|https://openjdk.org/projects/jdk/17[JDK 17]
+a|
+* https://openjdk.org/jeps/306[JEP-306]:	Restore Always-Strict Floating-Point Semantics
+* https://openjdk.org/jeps/356[JEP-356]:	Enhanced Pseudo-Random Number Generators
+* https://openjdk.org/jeps/382[JEP-382]:	New macOS Rendering Pipeline
+* https://openjdk.org/jeps/391[JEP-391]:	macOS/AArch64 Port
+* https://openjdk.org/jeps/398[JEP-398]:	Deprecate the Applet API for Removal
+* https://openjdk.org/jeps/403[JEP-403]:	Strongly Encapsulate JDK Internals
+* https://openjdk.org/jeps/407[JEP-407]:	Remove RMI Activation
+* https://openjdk.org/jeps/409[JEP-409]:	Sealed Classes
+* https://openjdk.org/jeps/410[JEP-410]:	Remove the Experimental AOT and JIT Compiler
+* https://openjdk.org/jeps/411[JEP-411]:	Deprecate the Security Manager for Removal
+* https://openjdk.org/jeps/415[JEP-415]:	Context-Specific Deserialization Filters
+
+|https://openjdk.org/projects/jdk/16[JDK 16]
+a|
+* https://openjdk.org/jeps/347[JEP-347]: Enable C++14 Language Features
+* https://openjdk.org/jeps/357[JEP-357]: Migrate from Mercurial to Git
+* https://openjdk.org/jeps/369[JEP-369]: Migrate to GitHub
+* https://openjdk.org/jeps/376[JEP-376]: ZGC: Concurrent Thread-Stack Processing
+* https://openjdk.org/jeps/380[JEP-380]: Unix-Domain Socket Channels
+* https://openjdk.org/jeps/386[JEP-386]: Alpine Linux Port
+* https://openjdk.org/jeps/387[JEP-387]: Elastic Metaspace
+* https://openjdk.org/jeps/388[JEP-388]: Windows/AArch64 Port
+* https://openjdk.org/jeps/390[JEP-390]: Warnings for Value-Based Classes
+* https://openjdk.org/jeps/392[JEP-392]: Packaging Tool
+* https://openjdk.org/jeps/394[JEP-394]: Pattern Matching for instanceof
+* https://openjdk.org/jeps/395[JEP-395]: Records
+* https://openjdk.org/jeps/396[JEP-396]: Strongly Encapsulate JDK Internals by Default
+
+|https://openjdk.org/projects/jdk/15[JDK 15]
+a|
+* https://openjdk.org/jeps/339[JEP-339]: Edwards-Curve Digital Signature Algorithm (EdDSA)
+* https://openjdk.org/jeps/371[JEP-371]: Hidden Classes
+* https://openjdk.org/jeps/372[JEP-372]: Remove the Nashorn JavaScript Engine
+* https://openjdk.org/jeps/373[JEP-373]: Reimplement the Legacy DatagramSocket API
+* https://openjdk.org/jeps/374[JEP-374]: Disable and Deprecate Biased Locking
+* https://openjdk.org/jeps/377[JEP-377]: ZGC: A Scalable Low-Latency Garbage Collector
+* https://openjdk.org/jeps/378[JEP-378]: Text Blocks
+* https://openjdk.org/jeps/379[JEP-379]: Shenandoah: A Low-Pause-Time Garbage Collector
+* https://openjdk.org/jeps/381[JEP-381]: Remove the Solaris and SPARC Ports
+* https://openjdk.org/jeps/385[JEP-385]: Deprecate RMI Activation for Removal
+
+|https://openjdk.org/projects/jdk/14[JDK 14]
+a|
+* https://openjdk.org/jeps/345[JEP-345]: NUMA-Aware Memory Allocation for G1
+* https://openjdk.org/jeps/349[JEP-349]: JFR Event Streaming
+* https://openjdk.org/jeps/352[JEP-352]: Non-Volatile Mapped Byte Buffers
+* https://openjdk.org/jeps/358[JEP-358]: Helpful NullPointerExceptions
+* https://openjdk.org/jeps/361[JEP-361]: Switch Expressions (Standard)
+* https://openjdk.org/jeps/362[JEP-362]: Deprecate the Solaris and SPARC Ports
+* https://openjdk.org/jeps/363[JEP-363]: Remove the Concurrent Mark Sweep (CMS) Garbage Collector
+* https://openjdk.org/jeps/364[JEP-364]: ZGC on macOS
+* https://openjdk.org/jeps/365[JEP-365]: ZGC on Windows
+* https://openjdk.org/jeps/366[JEP-366]: Deprecate the ParallelScavenge + SerialOld GC Combination
+* https://openjdk.org/jeps/367[JEP-367]: Remove the Pack200 Tools and API
+
+
+|https://openjdk.org/projects/jdk/13[JDK 13]
+a|
+* https://openjdk.org/jeps/350[JEP-350]: Dynamic CDS Archives
+* https://openjdk.org/jeps/351[JEP-351]: ZGC: Uncommit Unused Memory
+* https://openjdk.org/jeps/353[JEP-353]: Reimplement the Legacy Socket API
+
+
+|https://openjdk.org/projects/jdk/12[JDK 12]
+a|
+* https://openjdk.org/jeps/230[JEP-230]: Microbenchmark Suite
+* https://openjdk.org/jeps/334[JEP-334]: JVM Constants API
+* https://openjdk.org/jeps/340[JEP-340]: One AArch64 Port, Not Two
+* https://openjdk.org/jeps/341[JEP-341]: Default CDS Archives
+* https://openjdk.org/jeps/344[JEP-344]: Abortable Mixed Collections for G1
+* https://openjdk.org/jeps/346[JEP-346]: Promptly Return Unused Committed Memory from G1
+
+|https://openjdk.org/projects/jdk/11[JDK 11]
+a|
+* https://openjdk.org/jeps/181[JEP-181]: Nest-Based Access Control
+* https://openjdk.org/jeps/309[JEP-309]: Dynamic Class-File Constants
+* https://openjdk.org/jeps/315[JEP-315]: Improve Aarch64 Intrinsics
+* https://openjdk.org/jeps/318[JEP-318]: Epsilon: A No-Op Garbage Collector
+* https://openjdk.org/jeps/320[JEP-320]: Remove the Java EE and CORBA Modules
+* https://openjdk.org/jeps/321[JEP-321]: HTTP Client (Standard)
+* https://openjdk.org/jeps/323[JEP-323]: Local-Variable Syntax for Lambda Parameters
+* https://openjdk.org/jeps/324[JEP-324]: Key Agreement with Curve25519 and Curve448
+* https://openjdk.org/jeps/327[JEP-327]: Unicode 10
+* https://openjdk.org/jeps/328[JEP-328]: Flight Recorder
+* https://openjdk.org/jeps/329[JEP-329]: ChaCha20 and Poly1305 Cryptographic Algorithms
+* https://openjdk.org/jeps/330[JEP-330]: Launch Single-File Source-Code Programs
+* https://openjdk.org/jeps/331[JEP-331]: Low-Overhead Heap Profiling
+* https://openjdk.org/jeps/332[JEP-332]: Transport Layer Security (TLS) 1.3
+* https://openjdk.org/jeps/335[JEP-335]: Deprecate the Nashorn JavaScript Engine
+* https://openjdk.org/jeps/336[JEP-336]: Deprecate the Pack200 Tools and API
+
+|===
+
+The information on this page has been collected from the https://openjdk.org/projects/jdk/[OpenJDK] documentation.
