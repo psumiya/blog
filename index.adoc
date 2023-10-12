@@ -16,6 +16,8 @@ This is a collection of small articles regarding software engineering I have lea
 
 == Posts
 
+link:java-evolution.html[Java / JDK Release History]:: List of Java versions and the features released in the corresponding versions
+
 link:aws-lambda-custom-runtime-with-java-and-gradle.html[Custom Java Runtime for AWS Lambda]:: Build a slimmed and enhanced JRE and use it as a custom runtime for AWS Lambda, using gradle and docker
 
 link:when-not-to-use-kubernetes.html[When Not to Use Kubernetes]:: Some thoughts after having used Kubernetes in production.
