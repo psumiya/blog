@@ -1,0 +1,111 @@
+= Sample AWS Lambda Latency Metrics for Java Runtime
+
+Mar 2, 2024
+
+link:../index.html[Home]
+
+:Description: Sample AWS Lambda Latency Metrics for Java Runtime
+:author: Sumiya
+:nofooter:
+:sectlinks:
+:icons: font
+
+== Overview
+
+This document lists latencies I observed on a couple of lambdas my teams manage in production.
+
+These are both backend-only lambdas, meaning an end-user expects to get something functional done in near real-time (< 60 seconds) but not waiting on a web page or a user interface for a synchronous response.
+
+== Reporting Mechanism
+
+I used the following CloudWatch query to generate a latency report for a month.
+
+```
+filter @type = "REPORT"
+    | stats
+    count(*) as invocations,
+    pct(@duration, 90) as p90,
+    pct(@duration, 95) as p95,
+    pct(@duration, 99) as p99,
+    pct(@duration, 100) as p100
+    group by ispresent(@initDuration) as coldstart
+    | sort by coldstart
+```
+
+A 0 value in the coldstart column indicates no cold start was observed on those requests, and a value of 1 indicates a cold start was observed.
+
+Neither lambdas use any enhanced configuration such as SnapStart or custom runtime to improve performance.
+
+These are simple, no-framework, non-optimized Java lambdas with variations listed below.
+
+== Synchronous Invocation
+
+=== Lambda Configuration
+
+* Runtime: Java 11
+* Memory: 1024 MB
+* Architecture: x86_64
+
+=== Functionality
+
+* Receives request via API Gateway.
+* Depending on business logic, it may invoke zero or one internal microservice, waiting for it to return a response and then relay that response to the invoker.
+
+=== Latency
+
+.Synchronous Lambda Latencies (in milliseconds)
+[%autowidth]
+[frame=ends]
+|===
+| coldstart | invocations | p90 | p95 | p99 | p100
+
+| 0 | 23554089 | 139.2975 | 146.0913 | 246.6702 | 10030.01
+| 1 | 4560 | 4332.1264 | 4563.2383 | 4797.0807 | 5369.17
+
+|===
+
+* 90% of the requests were processed in less than 139 milliseconds per request.
+* 0.019 percent of overall requests ran into a cold-start.
+* The slowest request was ~10 seconds.
+
+== Asynchronous Invocation
+
+=== Lambda Configuration
+
+* Runtime: Java 17
+* Memory: 1024 MB
+* Architecture: arm64
+
+=== Functionality
+* Receives request via a source SQS.
+* Invokes an Oauth2 server over HTTPS to generate access tokens.
+** a background cache loader manages and refreshes the tokens every 60 minutes
+* Invokes one internal microservice over HTTPS which has cacheable responses.
+** a background cache loader (Caffeine) manages and refreshes the microservice response every 60 seconds
+* Publishes a message to a destination SQS.
+
+=== Latency
+
+.Asynchronous Lambda Latencies (in milliseconds)
+[%autowidth]
+[frame=ends]
+|===
+| coldstart | invocations | p90 | p95 | p99 | p100
+
+| 0 | 226604303 | 28.1869 | 37.4253 | 68.0894 | 20641.45
+| 1 | 130543 | 2049.1658 | 2122.1193 | 2287.3131 | 5770.08
+
+|===
+
+* 90% of the requests were processed in less than 28 milliseconds per request.
+* 0.057 percent of overall requests ran into a cold-start.
+* The slowest request was ~21 seconds.
+
+== Final Thoughts
+
+For ~250 million requests per month, these Lambdas cost ~$200 USD per month.
+
+If you are considering Lambdas for any of your use cases, I hope these numbers help you one way or another. While these observations are for Java lambdas, I would be hard-pressed to think any other language you prefer would not offer you similar benefits if the latencies look suitable for your use case.
+
+
+include::footer.adoc[]

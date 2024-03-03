@@ -16,6 +16,8 @@ This is a collection of small articles regarding software engineering I have lea
 
 == Posts
 
+link:aws-lamda-latency-java-runtime.html[AWS Lambda Latency Metrics for Java Runtime]:: Latency Metrics for a couple of Java Runtime based AWS Lambdas
+
 link:java-evolution.html[Java / JDK Release History]:: List of Java versions and the features released in the corresponding versions
 
 link:aws-lambda-custom-runtime-with-java-and-gradle.html[Custom Java Runtime for AWS Lambda]:: Build a slimmed and enhanced JRE and use it as a custom runtime for AWS Lambda, using gradle and docker
