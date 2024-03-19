@@ -18,6 +18,10 @@ link:../index.html[Home]
 |===
 |Version|Release Date|LTS{fn-lts}
 
+|JDK 22
+|2024-03-19
+|No
+
 |JDK 21
 |2023-09-19
 |Yes
@@ -71,6 +75,13 @@ This table excludes Incubator{fn-incubator} and Preview{fn-preview} features. To
 [cols="1,5"]
 |===
 |Version|Features - with link to the feature's JEP{fn-jep}
+
+|https://openjdk.org/projects/jdk/22[JDK 22]
+a|
+* https://openjdk.org/jeps/423[JEP-423]: Region Pinning for G1
+* https://openjdk.org/jeps/454[JEP-454]: Foreign Function and Memory API
+* https://openjdk.org/jeps/456[JEP-456]: Unnamed Variables and Patterns
+* https://openjdk.org/jeps/456[JEP-458]: Launch Multi-File Source Code Programs
 
 |https://openjdk.org/projects/jdk/21[JDK 21]
 a|
